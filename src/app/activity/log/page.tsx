@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import cssClasses from "./activity.module.css";
 import { useDependencies } from '@/app/services/DI/servieces.provider';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter, faFileExport, faCircleDot } from "@fortawesome/free-solid-svg-icons";
+import { faFilter, faFileExport, faCircleDot, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 
 export default function ActivityLog() {
     const { activityService } = useDependencies();
@@ -80,10 +80,11 @@ export default function ActivityLog() {
                             <th className={cssClasses.th}>Actor</th>
                             <th className={cssClasses.th}>Action</th>
                             <th className={cssClasses.th}>Date</th>
+                            <th className={cssClasses.th}></th>
                         </tr>
                     </thead>
                     <tbody className={cssClasses.tbody}>
-                        {activityList.map(({ id, actor_name, occurred_at }) => (
+                        {activityList.map(({ id, actor_name, action, occured_at }) => (
                             <tr className={cssClasses.tr} key={id}>
                                 <td className={cssClasses.td}>
                                     <div className={cssClasses.circleWithLetter}>
@@ -95,15 +96,24 @@ export default function ActivityLog() {
                                         </span>
                                     </div>
                                 </td>
-                                <td className={cssClasses.td}>{actor_name}</td>
-                                <td className={cssClasses.td}>{occurred_at}</td>
+                                <td className={cssClasses.td}>{action.name}</td>
+                                <td className={cssClasses.td}>{occured_at}</td>
+                                <td className={cssClasses.th} style={{cursor: 'pointer'}}> 
+                                    <FontAwesomeIcon 
+                                        icon={faGreaterThan} 
+                                    >
+                                    </FontAwesomeIcon> 
+                                </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
 
-            
+            <div className={cssClasses.loadMore}>
+                Load More
+            </div>
+
         </div>
     );
 }

@@ -16,7 +16,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div
+          style={{
+            width: '100%',
+            height: 'fit-content',
+            maxHeight: '100vh',
+            borderRadius: '2rem',
+            overflow: 'hidden',
+            overflowY: 'auto',
+            background: 'transparent',
+            border: '1px solid rgb(240, 240, 240)'
+          }}
+        >
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

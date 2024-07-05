@@ -18,7 +18,7 @@ export class ActivityService {
                 target_id: "string",
                 target_name: "string",
                 location: "string",
-                occured_at: "string",
+                occured_at: "22/3/2024",
                 metadata: {
                     redirect: "string",
                     description: "string",
@@ -39,7 +39,7 @@ export class ActivityService {
                 target_id: "string",
                 target_name: "string",
                 location: "string",
-                occured_at: "string",
+                occured_at: "2/6/2025",
                 metadata: {
                     redirect: "string",
                     description: "string",
@@ -60,7 +60,7 @@ export class ActivityService {
                 target_id: "string",
                 target_name: "string",
                 location: "string",
-                occured_at: "string",
+                occured_at: "30/12/2026",
                 metadata: {
                     redirect: "string",
                     description: "string",
