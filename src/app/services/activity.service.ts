@@ -70,7 +70,13 @@ export class ActivityService {
         ] ;
     }
 
-    filterPostsByName(actor_name: string) : ActivityModel[]{
-        return this.getAllActivities().filter((activity)=>{activity.actor_name = actor_name})?? [];
+
+    filterPosts(value: string) : ActivityModel[]{
+        return this.getAllActivities().filter(activity=> activity.actor_name.includes(value))?? [];
     }
+
+    exportCSV(){
+
+    }
+
   }

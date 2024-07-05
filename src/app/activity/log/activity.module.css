@@ -1,0 +1,143 @@
+.searchSection{
+    width: 100%;
+    height: 3.3rem;
+    background-color: rgb(240, 240, 240);
+    padding: .5rem 2rem;
+    padding-top: 1rem;
+  }
+  
+  .innerContainer{
+    display: flex;
+    gap: 0;
+    height: 2.5rem;
+    border: 1px solid rgba(126, 126, 126, 0.432);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 95%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inputField {
+    width: 70%;
+    padding: 8px; 
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .button {
+    width: 10%;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-left: 1px solid rgba(0, 0, 0, 0.627);
+    background-color: transparent;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease;
+    &:hover{
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px); /* Lift the button on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
+    }
+    &:active{
+      transform: translateY(0); /* Reset transform on click */
+      box-shadow: none; /* Remove box shadow on click */
+    }
+  }
+
+
+  .fontAwesomeIcon{
+    font-size: medium;
+
+  }
+
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    border-top: 0;
+  }
+  
+  .thead {
+    background-color: rgb(240, 240, 240);
+  }
+  
+  .thead .th {
+    padding: 12px;
+    text-align: left;
+    color: rgb(36, 36, 36)(34, 34, 34);
+    font-weight: bolder;
+    font-size: large;
+  }
+  
+  .tbody{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tbody .td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  
+  .tbody .tr:hover {
+    background-color: #f0f0f0a1;
+    transition: background-color 0.3s ease; 
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px); 
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .tbody .tr {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @media (max-width: 768px) {
+    .table {
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  .circleWithLetter {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, #b342ff, #ff425b, #ff5e42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.circle span {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}

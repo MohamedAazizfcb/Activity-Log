@@ -1,13 +1,24 @@
-import { AppProps } from 'next/app';
-import { ServiceProvider } from './services.context';
-import container from './services.di.container';
+import React, { createContext, useContext, ReactNode } from 'react';
+import { ActivityService } from '../activity.service';
 
-function servicesProvider({ Component, pageProps }: AppProps) {
-  return (
-    <ServiceProvider value={container}>
-      <Component {...pageProps} />
-    </ServiceProvider>
-  );
+interface Dependencies {
+  activityService: ActivityService;
 }
 
-export default servicesProvider;
+const defaultDependencies: Dependencies = {
+  activityService: new ActivityService(),
+};
+
+const DependencyContext = createContext<Dependencies>(defaultDependencies);
+
+export const DependencyProvider = ({ children }: { children: ReactNode }) => {
+    return (
+        <DependencyContext.Provider value={defaultDependencies}>
+            {children}
+        </DependencyContext.Provider>
+    );
+};
+
+export const useDependencies = () => {
+    return useContext(DependencyContext);
+};
