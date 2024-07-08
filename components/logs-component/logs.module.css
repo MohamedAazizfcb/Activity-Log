@@ -1,12 +1,12 @@
 .searchSection{
     width: 100%;
-    height: 3.3rem;
+    height: fit-content;
     background-color: rgb(240, 240, 240);
     padding: .5rem 2rem;
     padding-top: 1rem;
-  }
+}
   
-  .innerContainer{
+.innerContainer{
     display: flex;
     gap: 0;
     height: 2.5rem;
@@ -15,16 +15,16 @@
     overflow: hidden;
     width: 95%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .inputField {
+.inputField {
     width: 70%;
     padding: 8px; 
     background-color: transparent;
     border: 0;
-  }
+}
   
-  .button {
+.button {
     width: 10%;
     display: inline-block;
     padding: 10px 20px;
@@ -47,17 +47,16 @@
       transform: translateY(0); /* Reset transform on click */
       box-shadow: none; /* Remove box shadow on click */
     }
-  }
+}
 
-
-  .fontAwesomeIcon{
+.fontAwesomeIcon{
     font-size: medium;
 
-  }
+}
 
-  
-  .table {
+.table {
     width: 100%;
+    height: fit-content;
     border-collapse: collapse;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -65,37 +64,37 @@
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
     border-top: 0;
-  }
+}
   
-  .thead {
+.thead {
     background-color: rgb(240, 240, 240);
-  }
+}
   
-  .thead .th {
+.thead .th {
     padding: 12px;
     text-align: left;
     color: rgb(36, 36, 36)(34, 34, 34);
     font-weight: bolder;
     font-size: large;
-  }
+}
   
-  .tbody{
+.tbody{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .tbody .td {
+.tbody .td {
     padding: 10px;
     text-align: left;
     cursor: pointer;
-  }
+}
   
   
-  .tbody .tr:hover {
+.tbody .tr:hover {
     background-color: #f0f0f0a1;
     transition: background-color 0.3s ease; 
-  }
+}
 
-  @keyframes fadeIn {
+@keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(-10px); 
@@ -104,20 +103,20 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
+}
   
-  .tbody .tr {
+.tbody .tr {
     animation: fadeIn 0.5s ease-out;
-  }
+}
   
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .table {
       border-radius: 0;
       box-shadow: none;
     }
-  }
+}
 
-  .circleWithLetter {
+.circleWithLetter {
     display: flex;
     align-items: center;
 }
@@ -141,7 +140,7 @@
     color: #333;
 }
 
-.loadMore{
+.loadMore {
   width: 100%;
   height: fit-content;
   padding: 1.3rem 0;

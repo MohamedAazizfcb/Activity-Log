@@ -1,13 +1,18 @@
 "use client"
 import { useState, useEffect } from "react";
-import cssClasses from "./activity.module.css";
-import { useDependencies } from '@/app/services/DI/servieces.provider';
+import cssClasses from "./logs.module.css";
+import { useDependencies } from '@/services/DI/servieces.provider';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter, faFileExport, faCircleDot, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
+import { faFilter, faFileExport, faCircleDot } from "@fortawesome/free-solid-svg-icons";
 
-export default function ActivityLog() {
+
+
+
+
+const LogsComponent = () => {
+    const [activityList, setActivityList]  = useState([]);
     const { activityService } = useDependencies();
-    const [activityList, setActivityList] = useState([]);
+
     const [inputValue, setInputValue] = useState('');
 
     useEffect(() => {
@@ -16,12 +21,11 @@ export default function ActivityLog() {
 
     const fetchActivities = (fieldValue?) => {
         if (fieldValue) {
-            const filteredActivities = activityService.filterPosts(fieldValue);
-            setActivityList(filteredActivities);
+            setActivityList(activityService.filterPosts(fieldValue));
         } else {
-            const allActivities = activityService.getAllActivities();
-            setActivityList(allActivities);
+            setActivityList(activityService.getAllActivities());
         }
+
     };
 
     const handleFilterClick = () => {
@@ -32,7 +36,7 @@ export default function ActivityLog() {
         setInputValue(e.target.value);
     };
 
-    return (
+    return(
         <div>
             <div className={cssClasses.searchSection}>
                 <div className={cssClasses.innerContainer}>
@@ -99,10 +103,7 @@ export default function ActivityLog() {
                                 <td className={cssClasses.td}>{action.name}</td>
                                 <td className={cssClasses.td}>{occured_at}</td>
                                 <td className={cssClasses.th} style={{cursor: 'pointer'}}> 
-                                    <FontAwesomeIcon 
-                                        icon={faGreaterThan} 
-                                    >
-                                    </FontAwesomeIcon> 
+                                    {'>'}
                                 </td>
                             </tr>
                         ))}
@@ -113,7 +114,9 @@ export default function ActivityLog() {
             <div className={cssClasses.loadMore}>
                 Load More
             </div>
-
         </div>
+
     );
-}
+};
+
+export default LogsComponent;

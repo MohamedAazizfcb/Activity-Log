@@ -1,0 +1,8 @@
+.container{
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  max-height: 100vh;
+  overflow-y: auto;
+  border-radius: 1.5rem;
+}

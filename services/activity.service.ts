@@ -1,9 +1,13 @@
+"use client"
+import React, { useState } from 'react';
+
 import { ActivityModel } from "../models/activity.model";
 
 export class ActivityService {
-    
+    activityList: ActivityModel[] = [];
+
     getAllActivities(): ActivityModel[]{
-        return[
+        this.activityList = [
             {
                 id: "1",
                 object: "string",
@@ -67,16 +71,18 @@ export class ActivityService {
                     x_request_id: "string",
                 }
             },
-        ] ;
+        ];
+        return this.activityList;
     }
 
 
     filterPosts(value: string) : ActivityModel[]{
-        return this.getAllActivities().filter(activity=> activity.actor_name.includes(value))?? [];
+        this.activityList = this.getAllActivities().filter(activity=> activity.actor_name.includes(value))?? [];
+        return this.activityList;
     }
 
     exportCSV(){
 
     }
 
-  }
+}
